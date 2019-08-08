@@ -6,6 +6,7 @@ using namespace std;
 
 # define MAX 100
 
+# Dictionary strucutre which will contain key, value, ttl-> time to live for the (key,value) pair
 struct d{
 	string key;
 	int value;
@@ -44,11 +45,13 @@ int main() {
 				cin>>ttl;
 				temp.key=str;
 				temp.value=val;
+				// Getting current time
 				time_t result = time(nullptr);
 				if(ttl!=0)
 					temp.ttl=ttl+result;
 				else
 					temp.ttl=0;
+
 				D.push_back(temp);
 				break;
 				}
